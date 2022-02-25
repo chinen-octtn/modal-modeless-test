@@ -29,18 +29,14 @@ section {
   }
 }
 
-h1 {
+.kv {
   scroll-snap-align: start;
-  color: #fff;
-  text-align: center;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   background: #333;
-  font-size: 7rem;
-  font-weight: normal;
   overflow: hidden;
 
   &::before,
@@ -75,6 +71,19 @@ h1 {
   }
   100% {
     transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 7rem;
+  font-weight: normal;
+  line-height: 1.5;
+  margin: 0 20px;
+
+  span {
+    display: inline-block;
   }
 }
 
@@ -126,7 +135,9 @@ h2 {
   .text {
     background: #fff;
     width: 600px;
+    max-width: 100%;
     height: 200px;
+    margin: 0 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,7 +159,11 @@ h2 {
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 2rem;
+    color: #000;
     box-shadow: 0 0 3px #000;
     border: none;
     appearance: none;
@@ -168,6 +183,8 @@ h2 {
   position: fixed;
   left: 40px;
   top: 40px;
+  width: 0;
+  overflow: hidden;
 
   .text {
     background: rgba(#000, 0.5);
@@ -178,16 +195,17 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
     opacity: 0;
     transform: translateX(50%);
   }
 
-  &.is-active {
+  &[aria-hidden='false'] {
+    width: auto;
+    overflow: visible;
+
     .text {
       &:nth-child(1) {
         animation: toast 2s forwards;
-        display: block;
       }
 
       &:nth-child(2) {

@@ -29,9 +29,9 @@ const toast = () => {
   start.forEach((element) => {
     element.addEventListener('click', () => {
       const toast = document.querySelector('.toast')
-      toast?.classList.add('is-active')
+      toast?.setAttribute('aria-hidden', 'false')
       setTimeout(() => {
-        toast?.classList.remove('is-active')
+        toast?.setAttribute('aria-hidden', 'true')
       }, 6000)
     })
   })
