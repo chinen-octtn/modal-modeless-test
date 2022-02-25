@@ -6,6 +6,73 @@ block js
 
 block body
   main
-    h1 タスクランナー
-    p Hello World!
-    p: img(src="/assets/img/sample.png", alt="")
+    h1 ゲームUIサンプル
+    .wrap
+      section
+        h2 Stage 1 : 街
+        p.comment いわゆるモーダルの例
+        button.open.toggle(type="button" data-modal="stage1") 旅に出る
+        .modal(aria-hidden="true")#stage1
+          .text
+            p 街を出発した
+            button(type="button" data-modal="stage1").close ↓
+
+      section
+        h2 Stage 2 : 森
+        p.comment モンスターとの戦いと、その情報を見終わるまでモーダルが続く
+        button.open.toggle(type="button" data-modal="stage2") モンスター
+        .modal(aria-hidden="true")#stage2
+          .text
+            p モンスターと戦う
+            button(type="button" data-modal="stage2-1").toggle ↓
+
+        .modal(aria-hidden="true")#stage2-1
+          .text
+            p モンスターを倒した
+            button(type="button" data-modal="stage2-2").toggle ↓
+
+        .modal(aria-hidden="true")#stage2-2
+          .text
+            p 経験値を手に入れた
+            button(type="button" data-modal="stage2-3").toggle ↓
+
+        .modal(aria-hidden="true")#stage2-3
+          .text
+            p アイテムを手に入れた
+            button(type="button" data-modal="stage2-4").toggle ↓
+
+        .modal(aria-hidden="true")#stage2-4
+          .text
+            p 称号を手に入れた
+            button(type="button" data-modal="stage2-5").toggle ↓
+
+        .modal(aria-hidden="true")#stage2-5
+          .text
+            p お金を100ポケ手に入れた
+            button(type="button" data-modal="stage2-5").close ↓
+
+      section
+        h2 Stage 3 : 山
+        p.comment モンスターとの戦いのみモーダル、その後の情報はモードレス#[br]モーダルが終わったら自由に動ける
+        button.open.toggle(type="button" data-modal="stage3") モンスター
+        .modal(aria-hidden="true")#stage3
+          .text
+            p モンスターと戦う
+            button(type="button" data-modal="stage3").close.start ↓
+
+        .toast(aria-hidden="true")#stage3
+          .text
+            p モンスターを倒した
+          .text
+            p 経験値を手に入れた
+          .text
+            p アイテムを手に入れた
+          .text
+            p 称号を手に入れた
+          .text
+            p お金を100ポケ手に入れた
+
+      section
+        h2 Stage 4 : 街
+        p.comment 世界は平和になった
+

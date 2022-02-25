@@ -12,8 +12,8 @@
   "twitterCard": "summary_large_image",
   "twitterSite": "",
   "/": {
-    "name": "トップページ",
-    "description": "トップページの概要",
+    "name": "ゲームUIサンプル",
+    "description": "ゲームUIサンプル",
     "keywords": "",
     "ogp": "",
     "canonical": "",
