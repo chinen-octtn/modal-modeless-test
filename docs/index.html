@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head prefix="og:http://ogp.me/ns# fb:http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="index,follow">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="モーダル・モードレスをゲームUIから学ぶサンプル">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://chinen-octtn.github.io/modal-modeless-test/assets/img/ogp.png">
+    <meta name="twitter:url" content="https://chinen-octtn.github.io/modal-modeless-test/">
+    <meta name="twitter:description" content="モーダル・モードレスをゲームUIから学ぶサンプル">
+    <meta name="twitter:title" content="ゲームUIサンプル">
+    <meta property="og:description" content="モーダル・モードレスをゲームUIから学ぶサンプル">
+    <meta property="og:site_name" content="chinen-octtnのGitHub">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://chinen-octtn.github.io/modal-modeless-test/assets/img/ogp.png">
+    <meta property="og:url" content="https://chinen-octtn.github.io/modal-modeless-test/">
+    <meta property="og:title" content="ゲームUIサンプル">
+    <title>ゲームUIサンプル</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <script src="/assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="kv">
+        <h1>ゲームUI<span>サンプル</span></h1>
+      </div>
+      <div class="wrap">
+        <section>
+          <h2>Stage 1 : 街</h2>
+          <p class="comment">いわゆるモーダルの例</p>
+          <button class="open toggle" type="button" data-modal="stage1">旅に出る</button>
+          <div class="modal" aria-hidden="true" id="stage1">
+            <div class="text">
+              <p>街を出発した</p>
+              <button class="close" type="button" data-modal="stage1">↓</button>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Stage 2 : 森</h2>
+          <p class="comment">モンスターとの戦いと、その情報を見終わるまでモーダルが続く</p>
+          <button class="open toggle" type="button" data-modal="stage2">モンスター</button>
+          <div class="modal" aria-hidden="true" id="stage2">
+            <div class="text">
+              <p>モンスターと戦う</p>
+              <button class="toggle" type="button" data-modal="stage2-1">↓</button>
+            </div>
+          </div>
+          <div class="modal" aria-hidden="true" id="stage2-1">
+            <div class="text">
+              <p>モンスターを倒した</p>
+              <button class="toggle" type="button" data-modal="stage2-2">↓</button>
+            </div>
+          </div>
+          <div class="modal" aria-hidden="true" id="stage2-2">
+            <div class="text">
+              <p>経験値を手に入れた</p>
+              <button class="toggle" type="button" data-modal="stage2-3">↓</button>
+            </div>
+          </div>
+          <div class="modal" aria-hidden="true" id="stage2-3">
+            <div class="text">
+              <p>レベルが上がった</p>
+              <button class="toggle" type="button" data-modal="stage2-4">↓</button>
+            </div>
+          </div>
+          <div class="modal" aria-hidden="true" id="stage2-4">
+            <div class="text">
+              <p>アイテムを獲得</p>
+              <button class="toggle" type="button" data-modal="stage2-5">↓</button>
+            </div>
+          </div>
+          <div class="modal" aria-hidden="true" id="stage2-5">
+            <div class="text">
+              <p>お金を100ポケ手に入れた</p>
+              <button class="close" type="button" data-modal="stage2-5">↓</button>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Stage 3 : 山</h2>
+          <p class="comment">モンスターとの戦いのみモーダル、その後の情報はモードレス<br>モンスターとの戦いが終わったら自由に動ける</p>
+          <button class="open toggle" type="button" data-modal="stage3">モンスター</button>
+          <div class="modal" aria-hidden="true" id="stage3">
+            <div class="text">
+              <p>モンスターと戦う</p>
+              <button class="close start" type="button" data-modal="stage3">↓</button>
+            </div>
+          </div>
+          <div class="toast" aria-hidden="true" id="stage3">
+            <div class="text">
+              <p>モンスターを倒した</p>
+            </div>
+            <div class="text">
+              <p>経験値を手に入れた</p>
+            </div>
+            <div class="text">
+              <p>レベルが上がった</p>
+            </div>
+            <div class="text">
+              <p>アイテムを獲得</p>
+            </div>
+            <div class="text">
+              <p>お金を100ポケ手に入れた</p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Stage 4 : 街</h2>
+          <p class="comment">世界は平和になった</p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

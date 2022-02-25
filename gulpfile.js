@@ -35,7 +35,7 @@ const notify = require('gulp-notify')
 const changed = require('gulp-changed')
 
 // 公開用ディレクトリ
-const dest = 'dist/'
+const dest = 'docs/'
 
 // 開発用ディレクトリ
 const src = {
